@@ -1,0 +1,18 @@
+{
+    "caseSens": false,
+    "pluginDir": "./plugins",
+    "cmd": {
+        "ls": {
+            "comment": "list files",
+            "file": "/ls",
+            "function": "list",
+            "arguments": [
+                "string?"
+            ]
+        },
+        "ll": {
+            "alias": "ls -l"
+        },
+        "$default": {}
+    }
+}
