@@ -1,0 +1,21 @@
+{
+    "caseSens": false,
+    "pluginDir": "./plugins",
+    "cmd": {
+        "calc": {
+            "comment": "calculator",
+            "file": "/calc",
+            "function": "calc"
+        },
+        "": {
+            
+        },
+        "=": {
+            "alias": "calc"
+        },
+        "ll": {
+            "alias": "ls -l"
+        },
+        "$default": {}
+    }
+}

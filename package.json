@@ -11,5 +11,8 @@
     "url": "git@git.tsinghua.edu.cn:zhangjio21/mybot.git"
   },
   "author": "1951360581@qq.com",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "oicq": "^2.3.1"
+  }
 }
