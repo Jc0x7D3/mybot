@@ -1,20 +1,20 @@
 function not_root(d) {
-    return d[0].from_id != d[1].config.root;
+    return d[0].sender.user_id != d[1].config.root;
 }
 
-exports.on = (_, d) => {
+exports.on = function on(_, d)  {
     if (not_root(d)) return;
     d[1].static.on = true;
     return d[1].static.reply.rootOK;
 }
 
-exports.off = (_, d) => {
+exports.off = function off(_, d)  {
     if (not_root(d)) return;
     d.static.on = false;
     return d[1].static.reply.rootOK;
 }
 
-exports.ban = (_, d) => {
+exports.ban = function ban(_, d)  {
     if (not_root(d)) return;
     let BlackList = d[1].db.data.clinet.ban;
     d[0].message.forEach((obj) => {
@@ -26,7 +26,7 @@ exports.ban = (_, d) => {
     return d[1].static.reply.rootOK;
 }
 
-exports.pardon = (_, d) => {
+exports.pardon = function pardon(_, d) {
     if (not_root(d)) return;
     let BlackList = d[1].db.data.clinet.ban;
     d[0].message.forEach((obj) => {
@@ -38,7 +38,7 @@ exports.pardon = (_, d) => {
     return d[1].static.reply.rootOK;
 }
 
-exports.setget = (str, d) => {
+exports.setget = function setget(str, d) {
     if (not_root(d)) return;
 
     ok = 0;

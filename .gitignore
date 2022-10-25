@@ -2,4 +2,5 @@
 /node_modules
 /try
 /txt
+/data
 # ./package-lock.json

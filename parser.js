@@ -1,10 +1,10 @@
 const { read } = require("./jsonFile");
 
-var grTree;
+var grTree = {};
 
 function load_pr(tree, conf, path) {
     // 三种节点类型：叶子($function[, $dir])，别名($alias)，子命令($cmd[, $dir])
-    let np = (conf.$dir) ? conf.$dir + path : path;
+    let np = (conf.$dir) ? path + conf.$dir : path;
 
     if (conf.$function) {
         tree.$ = require(np)[conf.$function];
@@ -73,6 +73,7 @@ function parse(str, params) {
     cmd = str.replace(/^\s*/, '');
     let tree = grTree;
     while (true) {
+        let matched = false;
         for (let key in tree) {
             if (key === otherStr) continue;
             let val = tree[key];
@@ -83,9 +84,14 @@ function parse(str, params) {
                 }
                 else {
                     tree = val;
+                    matched = true;
                     break;
                 }
             }
+        }
+        if (!matched) {
+            if (otherStr in tree) return (tree[otherStr].$)(cmd, params);
+            else break;
         }
     }
 }

@@ -1,7 +1,7 @@
 {
     "id": 514195896,
-    "password": "?name=Jc03",
-    "use_password": true,
+    "password": "",
+    "use_password": false,
     "root": 1951360581,
     "self": 514195896,
     "cmd_config": "./json/cmd.json"

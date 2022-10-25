@@ -30,25 +30,30 @@ function stdErr(err, info) {
         })
 }
 
-client.on("system.login.qrcode", (e) => {
-    process.stdin.once("data", () => this.login());
+client.on("system.login.qrcode", function (e) {
+    //扫码后按回车登录
+    process.stdin.once("data", () => {
+        this.login()
+    })
 })
 
 client.on("system.online", () => {
     console.log("Success to login!");
-    log("Login!");
 })
 
 client.on("message", (e) => {
-    if (!(e.from_id == config.root)
+    let sender = e.sender.user_id;
+
+    if (sender != config.root
         && (!Shared.static.on
-            || Shared.db.data.clinet.ban.has(e.from_id))) {
+        || Shared.db.data.clinet.ban.has(sender))) {
+        console.log("blocked");
         return;
     }
 
     let ret_target;
-    if (e.message_type == "group") ret_target = client.pickGroup(e.group_id);
-    else ret_target = client.pickFriend(e.from_id);
+    if (e.message_type === "group") ret_target = client.pickGroup(e.group_id);
+    else ret_target = client.pickFriend(sender);
     
     let ret = parse(e.raw_message, [e, Shared]);
     if (ret instanceof Promise) {

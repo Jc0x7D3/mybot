@@ -50,15 +50,10 @@
         "-": {
             "$alias": "sese"
         },
-        "trans": {
-            "$comment": "非主流",
-            "$dir": "/ans/echo",
-            "$function": "trans"
-        },
         "$default": {
             "$comment": "智能回答",
-            "$dir": "/ans/echo",
-            "$function": "get"
+            "$dir": "/ans/ans",
+            "$function": "ans"
         }
     }
 }
