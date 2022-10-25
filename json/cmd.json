@@ -1,0 +1,64 @@
+{
+    "$caseSens": false,
+    "$dir": "./plugins",
+    "$cmd": {
+        "/": {
+            "$comment": "管理员专用",
+            "$dir": "/root",
+            "$cmd": {
+                "on": {
+                    "$function": "on"
+                },
+                "off": {
+                    "$function": "off"
+                },
+                "ban": {
+                    "$function": "ban"
+                },
+                "pardon": {
+                    "$function": "pardon"
+                },
+                "$default": {
+                    "$function": "setget"
+                }
+            }
+        },
+        "?": {
+            "$comment": "echo 调试器",
+            "$dir": "/echo",
+            "$function": "echo"
+        },
+        "？": {
+            "$alias": "?"
+        },
+        "calc": {
+            "$comment": "计算器，直接接要计算的式子",
+            "$dir": "/calc",
+            "$function": "calc"
+        },
+        "=": {
+            "$alias": "calc"
+        },
+        "sese": {
+            "$comment": "sese By lolicon-API",
+            "$dir": "/graph/main",
+            "$function": "sese"
+        },
+        "se": {
+            "$alias": "sese"
+        },
+        "-": {
+            "$alias": "sese"
+        },
+        "trans": {
+            "$comment": "非主流",
+            "$dir": "/ans/echo",
+            "$function": "trans"
+        },
+        "$default": {
+            "$comment": "智能回答",
+            "$dir": "/ans/echo",
+            "$function": "get"
+        }
+    }
+}

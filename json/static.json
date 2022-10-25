@@ -1,0 +1,13 @@
+{
+    "reply": {
+        "rootOK": "收到，主人！",
+        "invalidReq": "不要混入奇怪的字符",
+        "strangeXP": "虽性自，但建医",
+        "webErr": "谁断了老娘的网",
+        "unknown": "未知错误",
+        "pixivNoId": "\u8FD9\u56FE\u5C0F\u5B69\u5B50\u4E0D\u8981\u770B\uFF08\u56FE\u7247\u4E0D\u5B58\u5728\u6216\u4E3A\u9650\u5236\u7EA7\uFF09",
+        "searchNoGraph": "\u8001\u5A18\u627E\u4E0D\u5230\u8FD9\u5F20\u56FE",
+        "setull": "\u5b66\u4e60\u8d44\u6599\u6765\u55bd"
+    },
+    "on": true
+}
