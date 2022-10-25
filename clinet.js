@@ -46,7 +46,7 @@ client.on("message", (e) => {
 
     if (sender != config.root
         && (!Shared.static.on
-        || Shared.db.data.clinet.ban.has(sender))) {
+        || Shared.db.data.clinet.ban.includes(sender))) {
         console.log("blocked");
         return;
     }

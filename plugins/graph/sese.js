@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 exports.sese = async (tag, r18) => {
-    let url = `https://api.lolicon.app/setu/v2?tag=${tag}&r18=${global.r18}&size=thumb&size=original&size=regular`;
+    let url = `https://api.lolicon.app/setu/v2?tag=${tag}&r18=${r18}&size=thumb&size=original&size=regular`;
     console.log("Sese get:");
     console.log(url);
 
