@@ -64,7 +64,7 @@ function match(command, tree, params) {
 function load(filename) {
     var config = read(filename);
     load_pr(grTree, config, '');
-    console.log(grTree);
+    // console.log(grTree);
 }
 
 const otherStr = "$default";

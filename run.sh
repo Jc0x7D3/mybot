@@ -1,1 +1,0 @@
-nodemon bot.js -e js --ignore 'try/*'

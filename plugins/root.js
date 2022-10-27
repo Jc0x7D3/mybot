@@ -10,7 +10,7 @@ exports.on = function on(_, d)  {
 
 exports.off = function off(_, d)  {
     if (not_root(d)) return;
-    d.static.on = false;
+    d[1].static.on = false;
     return d[1].static.reply.rootOK;
 }
 
@@ -18,10 +18,11 @@ exports.ban = function ban(_, d)  {
     if (not_root(d)) return;
     let BlackList = d[1].db.data.clinet.ban;
     d[0].message.forEach((obj) => {
-        if (obj.type == 'at') {
-            BlackList.add(obj.qq);
+        if (obj.type == 'at' && !BlackList.includes(obj.qq)) {
+            BlackList.push(obj.qq);
         }
     })
+    console.log(BlackList);
     d[1].db.flush();
     return d[1].static.reply.rootOK;
 }
@@ -30,10 +31,11 @@ exports.pardon = function pardon(_, d) {
     if (not_root(d)) return;
     let BlackList = d[1].db.data.clinet.ban;
     d[0].message.forEach((obj) => {
-        if (obj.type == 'at' && BlackList.has(obj.qq)) {
-            BlackList.delete(obj.qq);
+        if (obj.type == 'at' && BlackList.includes(obj.qq)) {
+            BlackList.splice(BlackList.findIndex(id => (id == obj.qq)), 1);
         }
     })
+    console.log(BlackList);
     d[1].db.flush();
     return d[1].static.reply.rootOK;
 }

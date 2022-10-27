@@ -17,5 +17,10 @@ function makeGraph(url) {
     return segment.image(url);
 }
 
+function makeAt(id) {
+    return segment.at(id);
+}
+
 exports.xml = makeXML;
 exports.graph = makeGraph;
+exports.at = makeAt;

@@ -36,6 +36,11 @@
             "$dir": "/calc",
             "$function": "calc"
         },
+        "today": {
+            "$comment": "今日运势",
+            "$dir": "/suanming/main",
+            "$function": "ming"
+        },
         "=": {
             "$alias": "calc"
         },
@@ -49,6 +54,11 @@
         },
         "-": {
             "$alias": "sese"
+        },
+        "shit": {
+            "$comment": "bullshit",
+            "$dir": "/shit",
+            "$function": "gen"
         },
         "$default": {
             "$comment": "智能回答",
