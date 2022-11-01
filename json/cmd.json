@@ -38,8 +38,18 @@
         },
         "today": {
             "$comment": "今日运势",
-            "$dir": "/suanming/main",
-            "$function": "ming"
+            "$dir": "/fate/main",
+            "$function": "today"
+        },
+        "tomorrow": {
+            "$comment": "今日运势",
+            "$dir": "/fate/main",
+            "$function": "tomorrow"
+        },
+        "fate": {
+            "$comment": "今日运势",
+            "$dir": "/fate/main",
+            "$function": "fate"
         },
         "=": {
             "$alias": "calc"
